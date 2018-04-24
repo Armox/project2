@@ -30,15 +30,22 @@ $text-light: #989898;
 //===== GRID MIXINS ===== 
 @mixin grid-col ($num) {
 display: grid;
-    @if $num == 2 {
-        grid-template-columns: repeat(2, 50%);
-    } @else if $num == 3 {
-        grid-template-columns: repeat(3, 33.3%);
-    } @else if $num == 4 {
-        grid-template-columns: repeat(4, 25%);
-    }
+grid-template-columns: repeat($num, 1fr);
+    // @if $num == 2 {
+    //     grid-template-columns: repeat(2, 50%);
+    // } @else if $num == 3 {
+    //     grid-template-columns: repeat(3, 33.3%);
+    // } @else if $num == 4 {
+    //     grid-template-columns: repeat(4, 25%);
+    // }
 }
 
+// ===== WRAPPER =====
+%wrapper {
+    display: grid;
+    grid-template-columns: 1fr minmax(300px, 1200px) 1fr;
+    // grid-template-columns: 1fr 10fr 1fr;
+}
 // ===== FONT _______ =====
 %h1-light {
     color: $light-white;
@@ -52,7 +59,8 @@ display: grid;
 }
 
 // ===== BUTTONS =====
-%button {
+%btn {
+    padding: 0;
     width: 200px;
     height: 55px;
     text-transform: uppercase;
@@ -60,28 +68,41 @@ display: grid;
     font-weight: 700;
     line-height: 2.5;
     background: none;
-    border: 2px solid $light-white;
+    border: 3px solid $light-white;
+    &--small {
+    padding: 0;
+    width: 170px;
+    height: 55px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 2.5;
+    background: none;
+    border: 3px solid $light-white;
+    }
+    &--small-red {
+    padding: 0;
+    height: 55px;
+    width: 70px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 2.5;
+    background: none;
+    border: 3px solid $light-red;
+    color: $light-red;
+    }
 }
+
 
 // ===== UNIVERSAL TEXT-BOX =====
 %universal-text-box {
     max-width: 520px;
-    margin: 0 auto;
+    margin: 100px auto 50px auto;
     text-align: center;
 }
 
-%text-box-text {
-    &__text-box {
-        &__title--light {
-        color: $light-white;
-    }
-        &__para--light {
-            color: $text-light;
-            width: 80%;
-            margin: 0 auto 60px auto;
-        }
-    }
-}
+
 
 
 

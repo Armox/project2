@@ -26,9 +26,7 @@
 // CAROUSEL SECTION
 .carousel {
     &__wrapper {
-        max-width: 1150px;
-        width: 90%;
-        margin: 0 auto;
+        @extend %wrapper;
     }
     &--gradient {
         @include gradient($light-orange, $dark-orange);
@@ -36,6 +34,7 @@
     &--grid {
         @include grid-col(2);
         position: relative;
+        grid-column: 2;
     }
     &__text-box {
         justify-self: end;
@@ -43,8 +42,8 @@
         max-width: 500px;
         z-index: 1;
 
-        &__button {
-            @extend %button;
+        &__btn {
+            @extend %btn;
         }
     }
     &__img {
@@ -54,9 +53,10 @@
         position: absolute;
         left: 44%;
         top: 180px;
+        width: 50%;
     }
     &__nav {
-
+        grid-column: 2;
         &__list{
             text-align: center;
         
@@ -75,19 +75,20 @@
 // ABOUT SECTION
 .about {
     background: $dark-grey;
+    padding: 1px;
     &__wrapper {
-        max-width: 1150px;
-        width: 90%;
-        margin: 0 auto;
+       @extend %wrapper;
     }
     &__grid {
         @include grid-col(3);
         justify-content: space-between;
+        grid-column: 2;
     }
     &__text-box {
         @extend %universal-text-box;
     }
     &__content-box {
+        justify-self: center;
         text-align: center;
         background-color: $light-grey;
         max-width: 350px;
@@ -118,17 +119,17 @@
 // SKILLS SECTION
 .skills{
     background: $dark-black;
+    padding: 1px;
     &__wrapper {
-        max-width: 1150px;
-        width: 90%;
-        margin: 0 auto;
-    }
-    &__text-box {
-        @extend %universal-text-box;  
+        @extend %wrapper;
     }
     &__grid {
         @include grid-col(4);
         justify-content: space-between;
+        grid-column: 2;
+    }
+    &__text-box {
+        @extend %universal-text-box;  
     }
     &__content-box {
         text-align: center;
@@ -152,23 +153,22 @@
 
 // PROJECTS SECTION
 .projects {
-    text-align: center;
     background: $dark-grey;
+    padding: 1px;
     &__wrapper {
-        max-width: 1150px;
-        width: 90%;
-        margin: 0 auto;
-    }
-    &__img {
-        max-width: 800px;
+        @extend %wrapper;
     }
     &__grid {
         display: grid;
-        grid-template-columns: 1fr 3fr 1fr
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-column: 2;
+    }
+    &__img {
+        max-width: 800px;
+        justify-self: center;
     }
     &__text-box {
-        max-width: 500px;
-        margin: 0 auto;
+        @extend %universal-text-box; 
         &__title--light {
             color: $light-white;
         }
@@ -181,28 +181,33 @@
 // TEAM SECTION
 .team {
     background: $dark-black;
+    padding: 1px;
     &__text-box {
         @extend %universal-text-box;
     }
     &__wrapper {
-        max-width: 1150px;
-        width: 90%;
-        margin: 0 auto;
+        @extend %wrapper;
     }
     &__grid {
         @include grid-col(4);
-        justify-content: space-between;
+        // align-items: center;
+        grid-column: 2;
+        // justify-content: space-between;
     }
     &__content-box {
+        justify-self: center;
         border-bottom: 10px solid $dark-red;
         max-width: 270px;
         background: $light-black;
+        margin-bottom: 100px;
+        // text-align: center;
+        // align-items: center;
         &__img {
             width: 100%;
+            max-width: 270px;
         }
     }
 }
-
 
 .team__content-box {
     &__social {
@@ -213,43 +218,20 @@
         }
     }
 }
-.fa-facebook-f {
-    background: #4f7dbf;
-    color: $light-white;
-}
-
-.fa-twitter {
-    background: #00adef;
-    color: $light-white;
-}
-
-.fa-pinterest-p {
-    background: #cf191a;
-    color: $light-white;
-}
-
-.fa-dribbble {
-    background: #f7679a;
-    color: $light-white;
-}
-
-.fa-flickr {
-    color: $light-white;
-    background: #ff0085;
-}
 
 // STATS SECTION
 .stats {
     &--gradient {
         @include gradient($light-green, $dark-green);
+        padding: 1px;
     }
     &__wrapper{
-        max-width: 1150px;
-        width: 90%;
-        margin: 0 auto;
+        @extend %wrapper;
+        margin: 100px 0;
     }
     &__grid {
         @include grid-col(4);
+        grid-column: 2;
     }
     &__content-box {
         text-align: center;
@@ -258,9 +240,10 @@
         &__title {
             font-weight: 700;
             align-self: end;
+            margin: 28px 0 19px 0;
         }
-        &__button {
-            @extend %button;
+        &__btn--small {
+            @extend %btn--small;
             align-self: end;
         }
     }
@@ -269,7 +252,7 @@
 // PORTFOLIO SECTION
 .portfolio {
     background: $dark-grey;
-    text-align: center;
+    padding: 1px;
     &__text-box {
         @extend %universal-text-box;
         &__title--light {
@@ -282,8 +265,10 @@
     &__grid {
         @include grid-col(4);
     }
-    &__btn {
-         @extend %button;
+    &__btn--small {
+         @extend %btn--small;
+         margin: 40px auto 100px auto;
+         display: block;
     }
 }
 
@@ -300,36 +285,218 @@
     &__img {
     width: 100%;
     height: 80%;
-    max-height: 300px;
     }
     &__caption {
         color: #343434;
         font-size: 1rem;
         font-weight: 700;
         line-height: 2.5;
+        text-align: center;
     }
 }
 
+// BLOG SECTION
+.blog {
+    background: $dark-black;
+    padding: 1px;
+    &__text-box {
+        @extend %universal-text-box;
+        &__title--light {
+            color: $light-white;
+        }
+        &__para--light {
+            color: $text-light;
+        }
+    }
+    &__wrapper {
+        @extend %wrapper;
+    }
+    &__grid {
+        @include grid-col(2);
+        grid-column: 2;
+        grid-gap: 30px;
+        margin-bottom: 40px;
+    }
+    &__content-box {
+    padding: 1px;
+    text-align: center;
+    list-style: none;
+    background: $light-black;
+    border-bottom: 10px solid $light-orange;
+    grid-row-start: 1;
+    grid-row-end: 3;
+        &__list {
+            list-style: none;
+        }
+        &__img {
+            width: 100%;
+        }
+        &__social__icon {
+            display: inline-block;
+        }
+    }
+    &__btn--small {
+        @extend %btn--small;
+        grid-column: 2;
+        margin: 0 auto 100px auto;
+    }
+}
 
+.blog__content-box {
+    &--slim {
+        background: $light-black;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    &--border1 {
+        border-right: 10px solid $light-red;
+    }
+    &--border2 {
+        border-right: 10px solid $light-green;
+        grid-row: 2;
+    }
+    &__text-box {
+        text-align: center;
+        float: right;
+    }
+}
 
-// %isLarge {
-//   font-size: 2.5rem;
-// }
-
-// .heroSection {
-//   &__header {
-//     // some styles
+// CONTACT SECTION
+.contact {
+    &--gradient {
+        @include gradient($light-orange, $dark-orange);
+    }
+    &__wrapper {
+        @extend %wrapper;
+    }
+    &__text-box {
+        grid-column: 2;
+        // text-align: center;
+        margin: 100px auto;
+        text-align: center;
+        &__title--email {
+            padding: 15px 73px;
+            border: 3px solid $light-white;
+            margin: 28px 0;
+        }
+    }
+}
     
-//     &--isLarge {
-//       @extend %isLarge;
-//     }
-//   }
+// MAP SECTION
+.map {
+    &__img {
+        width: 100%;
+    }
+}
 
-//   &__subHeader {
-//      // some styles
+// MESSAGE SECTION
+.message {
+    background: $dark-black;
+    padding: 1px;
+    &__wrapper {
+        @extend %wrapper;
+        margin: 100px 0;
+    }
+    &__text-box {
+        @extend %universal-text-box;
+        grid-column: 2;
+        margin-bottom: 50px;
+        &__title--light {
+            color: $light-white;
+            margin-bottom: 40px;
+        }
+        &__para--light {
+            color: $text-light;
+            margin-bottom: 35px;
+        }
+    }
+    &__social {
+        grid-column: 2;
+        text-align: center;
+        margin-bottom: 40px;
+        &__item {
+            display: inline-block;
+            margin: 5px;
+        }
+    }
+    &__form {
+        grid-column: 2;
+        margin: 0 auto;
+        width: 50%;
+        text-align: center;
+        &__input {
+            width: 100%;
+            display: block;
+            background: $light-black;
+            border: none;
+            margin-bottom: 10px;
+            min-height: 55px;
+            text-align: center;
+            color: $text-light;
+            padding: 20px;
+        }
+        &__btn--small {
+            @extend %btn--small;
+            color: $light-white;
+            margin-top: 40px;
+        }
+    }
+}
+// MAIN-FOOTER
+.main-footer {
+    &--gradient {
+        @include gradient($light-white, $dark-white);
+    }
+    &__wrapper {
+        @extend %wrapper;
+        margin: 100px 0;
+    }
+    &__grid {
+        @include grid-col(4);
+        grid-column: 2;
+        grid-gap: 30px;
+    }
+    &__copyright-box {
+        height: 110px;
+        background: $dark-black;
+        &__text-light {
+            color: $text-light;
+            text-align: center;
+            padding-top: 40px;
+        }
+    }
+}
     
-//     &--isLarge {
-//          @extend %isLarge;
-//     }
-//   }
-// }
+.main-footer__content-box {
+    &--grid {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-row-gap: 25px;
+    }
+    &__form {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        margin-bottom: 40px;
+        &__email-input {
+            height: 55px;
+            background: #eeeeee; 
+            border: none;
+            font-size: 2rem;
+        }
+        &__btn--small-red {
+            @extend %btn--small-red;
+            justify-self: end;
+        }
+    }
+    &__para--dark {
+        color: #242424;
+        margin: 0;
+        font-size: 1rem;
+    }
+    &__para--date{
+        color: $text-light;
+            margin: 0;
+            font-size: 1rem;
+    }
+}

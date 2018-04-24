@@ -55,6 +55,17 @@ li {
     line-height: 2.5;
 }
 
+@font-face {
+  font-family: 'Socialico';
+  src:  url('../fonts/Socialico.otf') format('otf'),
+}
+
+%small-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 2;
+}
+
 .carousel__text-box {
     &__title {
         &--light {
@@ -156,5 +167,20 @@ li {
         &__para--light {
             color: $text-light;
         }
+    }
+}
+// CONTACT SECTION
+.contact__text-box {
+    &__title--phone {
+        font-weight: 700;
+        color: $light-white;
+    }
+    &__title--email {
+        color: $text-dark;
+    }
+    &__title--address {
+        color: #343434;
+        font-size: 1.875rem;/* Approximation due to font substitution */
+        font-weight: 300
     }
 }
