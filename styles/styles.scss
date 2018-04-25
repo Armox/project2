@@ -40,6 +40,29 @@
     }
     &--gradient {
         @include gradient($light-orange, $dark-orange);
+        position: relative;
+    }
+    &--triangle-right::after {
+        content: '';
+        position: absolute;
+        left:50%;
+        width: 0;
+        height: 0;
+        border-left: 0 solid transparent;
+        border-right: 30px solid transparent;
+        border-top: 20px solid $dark-orange;
+    }
+    &--triangle-left::before {
+        content: '';
+        position: absolute;
+        left:50%;
+        transform: translateX(-100%);
+        top: 100%;
+        width: 0;
+        height: 0;
+        border-left: 30px solid transparent;
+        border-right: 0 solid transparent;
+        border-top: 20px solid $light-orange;
     }
     &--grid {
         @include grid-col(200px, 20px, 0);
@@ -152,12 +175,37 @@
         text-align: center;
         @include gradient($light-red, $dark-red);
         padding: 1px;
+        position: relative;
+        
     }
     &__title {
         margin-top: 150px;
     }
     &__author {
         margin-bottom: 150px; 
+    }
+    &--triangle-right::after {
+        content: '';
+        position: absolute;
+        left:50%;
+        top: 100%;
+        width: 0;
+        height: 0;
+        border-left: 0 solid transparent;
+        border-right: 30px solid transparent;
+        border-top: 20px solid $dark-red;
+    }
+    &--triangle-left::before {
+        content: '';
+        position: absolute;
+        left:50%;
+        transform: translateX(-100%);
+        top: 100%;
+        width: 0;
+        height: 0;
+        border-left: 30px solid transparent;
+        border-right: 0 solid transparent;
+        border-top: 20px solid $light-red;
     }
 }
 
@@ -253,6 +301,30 @@
     &--gradient {
         @include gradient($light-green, $dark-green);
         padding: 1px;
+        position: relative;
+    }
+    &--triangle-right::after {
+        content: '';
+        position: absolute;
+        left:50%;
+        top: 100%;
+        width: 0;
+        height: 0;
+        border-left: 0 solid transparent;
+        border-right: 30px solid transparent;
+        border-top: 20px solid $dark-green;
+    }
+    &--triangle-left::before {
+        content: '';
+        position: absolute;
+        left:50%;
+        transform: translateX(-100%);
+        top: 100%;
+        width: 0;
+        height: 0;
+        border-left: 30px solid transparent;
+        border-right: 0 solid transparent;
+        border-top: 20px solid $light-green;
     }
     &__wrapper {
         @extend %wrapper;
@@ -409,6 +481,30 @@ border-bottom: 10px solid $light-orange;
 .contact {
     &--gradient {
         @include gradient($light-orange, $dark-orange);
+        position: relative;
+    }
+    &--triangle-right::after {
+        content: '';
+        position: absolute;
+        left:50%;
+        top: 100%;
+        width: 0;
+        height: 0;
+        border-left: 0 solid transparent;
+        border-right: 30px solid transparent;
+        border-top: 20px solid $dark-orange;
+    }
+    &--triangle-left::before {
+        content: '';
+        position: absolute;
+        left:50%;
+        transform: translateX(-100%);
+        top: 100%;
+        width: 0;
+        height: 0;
+        border-left: 30px solid transparent;
+        border-right: 0 solid transparent;
+        border-top: 20px solid $light-orange;
     }
     &__wrapper {
         @extend %wrapper;
@@ -525,6 +621,10 @@ border-bottom: 10px solid $light-orange;
         grid-template-rows: 1fr 1fr 1fr;
         grid-row-gap: 25px;
     }
+    &__img {
+        width: 100%;
+        max-width: 400px;
+    }
     &__form {
         display: grid;
         grid-template-columns: 3fr 1fr;
@@ -534,6 +634,8 @@ border-bottom: 10px solid $light-orange;
             background: #eeeeee; 
             border: none;
             font-size: 2rem;
+            width: 90%;
+            max-width: 250px;
         }
         &__btn--small-red {
             @extend %btn--small-red;
