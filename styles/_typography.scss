@@ -1,3 +1,4 @@
+// UNIVERSAL STYLES
 html {
   font-size: 62.5%;
 }
@@ -8,6 +9,9 @@ h1  {
     font-family: 'Raleway', sans-serif;
     text-transform: uppercase;
     font-size: 5rem;
+    @media screen and (max-width: 370px) {
+        font-size: 4rem;
+    }
 }
 
 h2 {
@@ -18,6 +22,9 @@ h2 {
     font-size: 3.75rem;
     font-weight: 300;
     line-height: 1.083;
+    @media screen and (max-width: 430px) {
+        font-size: 2.5rem;
+    }
 }
 
 h3 {
@@ -26,6 +33,9 @@ h3 {
     line-height: 1.375;
     font-size: 2.5rem;
     font-weight: 300;
+    @media screen and (max-width: 430px) {
+        font-size: 2rem;
+    }
 }
 
 h4 {
@@ -42,6 +52,9 @@ p {
     font-size: 1.5rem;
     font-weight: 300;
     line-height: 1.5;
+    @media screen and (max-width: 430px) {
+        font-size: 1rem;
+    }
 }
 
 hr {
@@ -53,11 +66,16 @@ li {
     font-size: 1rem;
     font-weight: 700;
     line-height: 2.5;
+    font-family: 'Raleway', sans-serif;
 }
 
-@font-face {
-  font-family: 'Socialico';
-  src:  url('../fonts/Socialico.otf') format('otf'),
+a {
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+}
+a:visited {
+    color: inherit;
+    font-family: 'Raleway', sans-serif;
 }
 
 %small-text {
@@ -66,6 +84,7 @@ li {
     line-height: 2;
 }
 
+// CAROUSEL SECTION
 .carousel__text-box {
     &__title {
         &--light {
@@ -82,6 +101,7 @@ li {
     }
 }
 
+// ABOUT SECTION
 .about {
     &__text-box {
         &__title--light {
@@ -95,9 +115,13 @@ li {
         &__para--light{
             color: $text-light;
         }
+        &__title--light{
+        color: $light-white;
+        }
     }
 }
 
+// SKILLS SECTION
 .skills {
     &__text-box {
         &__title--light {
@@ -123,9 +147,7 @@ li {
         line-height: 0.917;
         font-weight: 700;
         text-transform: none;
-
         &--quotes {
-            
             &::before {
                 content: '“';
             }
@@ -136,11 +158,24 @@ li {
                 font-size: 8.75rem;
                 font-weight: 700;
                 color: $light-white;
+                @media screen and (max-width: 430px) {
+                    font-size: 4rem;
+                }
             }
         }
     }
     &__author {
         color: $light-white;
+    }
+}
+
+// PROJECTS SECTION
+.projects__text-box {
+    &__title--light {
+        color: $light-white;
+        }
+    &__para--light {
+        color: $text-light;
     }
 }
 
@@ -169,6 +204,59 @@ li {
         }
     }
 }
+
+// STATS SECTION
+.stats__content-box {
+    &__title {
+        color: $text-dark;
+    }
+}
+
+// PORTFOLIO SECTION
+.portfolio__text-box {
+    &__title--light {
+            color: $light-white;
+        }
+    &__para--light {
+        color: $text-light;
+    }
+}
+
+.portfolio__cell{
+    background: $light-white;
+    &__caption {
+        color: #343434;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 2.5;
+        text-align: center;
+    }
+}
+
+// BLOG SECTION
+.blog__text-box {
+    &__title--light {
+            color: $light-white;
+        }
+    &__para--light {
+        color: $text-light;
+    }
+}
+
+.blog__content-box__list {
+    &__item--title {
+        color: $light-white;
+    }
+    &__item--date {
+        color: $light-white;
+        line-height: 1.5;
+    }
+    &__item__para--light {
+        color: $text-light;
+        line-height: 1.5;
+    }
+}
+
 // CONTACT SECTION
 .contact__text-box {
     &__title--phone {
@@ -181,6 +269,47 @@ li {
     &__title--address {
         color: #343434;
         font-size: 1.875rem;/* Approximation due to font substitution */
-        font-weight: 300
+        font-weight: 300;
+        @media screen and (max-width: 430px) {
+            font-size: 1rem;
+        }
+    }
+}
+
+// MESSAGE SECTION
+.message__text-box {
+     &__title--light {
+            color: $light-white;
+            margin-bottom: 40px;
+        }
+    &__para--light {
+        color: $text-light;
+        margin-bottom: 35px;
+    }
+}
+
+.message__form__input {
+    color: $text-light;
+}
+
+// FOOTER
+.main-footer__copyright-box {
+    &__text-light {
+        color: $text-light;
+        text-align: center;
+        padding-top: 40px;
+    }
+}
+
+.main-footer__content-box {
+    &__para--dark {
+        color: #242424;
+        margin: 0;
+        font-size: 1rem;
+    }
+    &__para--date{
+        color: $text-light;
+            margin: 0;
+            font-size: 1rem;
     }
 }

@@ -11,15 +11,15 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <header>
-        <nav class="nav">
-            <img src="images/logo.png" alt="superflex logo" class="nav__logo">
+    <header class="main-header--wrapper">
+        <nav class="main-header__nav--grid">
+            <img src="images/logo.png" alt="superflex logo" class="main-header__nav__logo">
             <ul class="nav__list">
-                <li class="nav__list__item">Home</li>
-                <li class="nav__list__item">About</li>
-                <li class="nav__list__item">Portfolio</li>
-                <li class="nav__list__item">Blog</li>
-                <li class="nav__list__item">Contact</li>
+                <li class="main-header__nav__list__item"><a href="#">Home</a></li>
+                <li class="main-header__nav__list__item"><a href="#">About</a></li>
+                <li class="main-header__nav__list__item"><a href="#">Portfolio</a></li>
+                <li class="main-header__nav__list__item"><a href="#">Blog</a></li>
+                <li class="main-header__nav__list__item"><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -36,7 +36,7 @@
                             </span>
                         </h1>
                         <p class="carousel__text-box__para--dark">Simpleflex is the best solution for you. Present your business and services properly. </p>
-                        <button class="carousel__text-box__button">purchase this theme</button>
+                        <button class="carousel__text-box__btn">purchase this theme</button>
                     </div>
                     <img src="images/mockup-1.png" alt="cell phone" class="carousel__img">
                 </div>
@@ -122,10 +122,11 @@
             </div>
             <div class="projects__wrapper">
                 <div class="projects__grid">
-                    <i class="fas fa-angle-left"></i>
-                    <img src="images/mockup-2.png" alt="webpage example" class="projects__img">
-                    <i class="fas fa-angle-right"></i>
+                    <i class="fas fa-angle-left projects--hide"></i>
+                    <img src="images/mockup-2.png" alt="webpage example" class="projects__img projects--hide">
+                    <i class="fas fa-angle-right projects--hide"></i>
                 </div>
+                <button class="projects__btn">view projects</button>
             </div>
         </section>
 <!-- TEAM SECTION -->
@@ -208,45 +209,45 @@
             </div>
             <nav class="portfolio__nav">
                 <ul class="portfolio__nav__list">
-                    <li class="portfolio__nav__list__item">all</li>
-                    <li class="portfolio__nav__list__item">videos</li>
-                    <li class="portfolio__nav__list__item">illustrations</li>
-                    <li class="portfolio__nav__list__item">print</li>
-                    <li class="portfolio__nav__list__item">misc</li>
+                    <li class="portfolio__nav__list__item"><a href="#">all</a></li>
+                    <li class="portfolio__nav__list__item"><a href="#">videos</a></li>
+                    <li class="portfolio__nav__list__item"><a href="#">illustrations</a></li>
+                    <li class="portfolio__nav__list__item"><a href="#">print</a></li>
+                    <li class="portfolio__nav__list__item"><a href="#">misc</a></li>
                 </ul>   
             </nav>
             <div class="portfolio__grid">
                 <div class="portfolio__cell">
                     <img src="images/portfolio-1.png" alt="" class="portfolio__cell__img">
-                    <p class="portfolio__cell__caption">something</p>
+                    <p class="portfolio__cell__caption">kopazito</p>
                 </div>
                 <div class="portfolio__cell">
                     <img src="images/portfolio-2.png" alt="" class="portfolio__cell__img">
-                    <p class="portfolio__cell__caption">something</p>
+                    <p class="portfolio__cell__caption">i love pixels</p>
                 </div>
                 <div class="portfolio__cell">
                     <img src="images/portfolio-3.png" alt="" class="portfolio__cell__img">
-                    <p class="portfolio__cell__caption">something</p>
+                    <p class="portfolio__cell__caption">shotmen</p>
                 </div>
                 <div class="portfolio__cell">
                     <img src="images/portfolio-4.png" alt="" class="portfolio__cell__img">
-                    <p class="portfolio__cell__caption">something</p>
+                    <p class="portfolio__cell__caption">voodoo</p>
                 </div>
                 <div class="portfolio__cell">
                     <img src="images/portfolio-5.png" alt="" class="portfolio__cell__img">
-                    <p class="portfolio__cell__caption">something</p>
+                    <p class="portfolio__cell__caption">barbapapa</p>
                 </div>
                 <div class="portfolio__cell">
                     <img src="images/portfolio-6.png" alt="" class="portfolio__cell__img">
-                    <p class="portfolio__cell__caption">something</p>
+                    <p class="portfolio__cell__caption">ron weasley</p>
                 </div>
                 <div class="portfolio__cell">
                     <img src="images/portfolio-7.png" alt="" class="portfolio__cell__img">
-                    <p class="portfolio__cell__caption">something</p>
+                    <p class="portfolio__cell__caption">my diamond returns!</p>
                 </div>
                 <div class="portfolio__cell">
                     <img src="images/portfolio-8.png" alt="" class="portfolio__cell__img">
-                    <p class="portfolio__cell__caption">something</p>
+                    <p class="portfolio__cell__caption">i can pay my bills</p>
                 </div>
             </div>
             <button class="portfolio__btn--small">load more</button>
@@ -263,9 +264,9 @@
                         <div class="blog__content-box">
                             <img src="images/blog-1.png" alt="" class="blog__content-box__img">
                             <ul class="blog__content-box__list">
-                                <li><h4>Post With Image</h4></li>
-                                <li>DEC 29, 2013</li>
-                                <li><p>At vero eos et oacusam et justo due dolores et ae rebum quis aute iare reorehenderi in vulupiale veil esse dillam..</p></li>
+                                <li class="blog__content-box__list__item--title"><h4>Post With Image</h4></li>
+                                <li class="blog__content-box__list__item--date">DEC 29, 2013</li>
+                                <li><p class="blog__content-box__list__item__para--light">At vero eos et oacusam et justo due dolores et ae rebum quis aute iare reorehenderi in vulupiale veil esse dillam..</p></li>
                             </ul>
                             <ul class="blog__content-box__social">
                                 <li class="blog__content-box__social__icon"><img src="images/social-icon-facebook.png" alt="facebook icon"></li>
@@ -273,56 +274,57 @@
                                 <li class="blog__content-box__social__icon"><img src="images/social-icon-g.png" alt="g icon"></li>
                             </ul>
                         </div>
-                        <!-- <div> -->
-                        <div class="blog__content-box--slim blog__content-box--border1">
-                            <img src="images/blog-2.png" alt="">
-                            <div class="blog__content-box__text-box">
-                                <ul class="blog__content-box__list">
-                                    <li>
-                                        <h4>Post With Image</h4>
-                                    </li>
-                                    <li>DEC 24, 2013</li>
-                                    <li>
-                                        <p>At vero eos et accusam justo duo dolores etea ruburn quis auste iure..</p>
-                                    </li>
-                                </ul>
-                                <ul class="blog__content-box__social">
-                                    <li class="blog__content-box__social__icon">
-                                        <img src="images/social-icon-facebook.png" alt="facebook icon">
-                                    </li>
-                                    <li class="blog__content-box__social__icon">
-                                        <img src="images/social-icon-twitter.png" alt="twitter icon">
-                                    </li>
-                                    <li class="blog__content-box__social__icon">
-                                        <img src="images/social-icon-g.png" alt="g icon">
-                                    </li>
-                                </ul>
-                            </div>   
-                        </div>
-                        <div class="blog__content-box--slim blog__content-box--border2">
-                            <img src="images/blog-3.png" alt=""> 
-                            <div class="blog__content-box__text-box">
-                                <ul class="blog__content-box__list">
-                                    <li>
-                                        <h4>Post With Image</h4>
-                                    </li>
-                                    <li>DEC 27, 2013</li>
-                                    <li>
-                                        <p>Rebum quis aute iure reprehenderit in voluptate..velit esse cilum..</p>
-                                    </li>
-                                </ul>
-                                <ul class="blog__content-box__social">
-                                    <li class="blog__content-box__social__icon">
-                                        <img src="images/social-icon-facebook.png" alt="facebook icon">
-                                    </li>
-                                    <li class="blog__content-box__social__icon">
-                                        <img src="images/social-icon-twitter.png" alt="twitter icon">
-                                    </li>
-                                    <li class="blog__content-box__social__icon">
-                                        <img src="images/social-icon-g.png" alt="g icon">
-                                    </li>
-                                </ul>
+                        <div class="blog__sub-box clearfix"> 
+                            <div class="blog__sub-box__content-box--slim blog__sub-box__content-box--border1">
+                                <img src="images/blog-2.png" alt="" class="blog__sub-box__content-box__img">
+                                <div class="blog__sub-box__content-box__text-box">
+                                    <ul class="blog__sub-box__content-box__list">
+                                        <li class="blog__content-box__list__item--title"><h4>Post With Image</h4></li>
+                                        <li class="blog__content-box__list__item--date">DEC 24, 2013</li>
+                                        <li>
+                                            <p class="blog__content-box__list__item__para--light">At vero eos et accusam justo duo dolores etea ruburn quis auste iure..</p>
+                                        </li>
+                                    </ul>
+                                    <ul class="blog__sub-box__content-box__social">
+                                        <li class="blog__content-box__social__icon">
+                                            <img src="images/social-icon-facebook.png" alt="facebook icon">
+                                        </li>
+                                        <li class="blog__content-box__social__icon">
+                                            <img src="images/social-icon-twitter.png" alt="twitter icon">
+                                        </li>
+                                        <li class="blog__content-box__social__icon">
+                                            <img src="images/social-icon-g.png" alt="g icon">
+                                        </li>
+                                    </ul>
+                                </div>  
                             </div>
+                           
+                            <div class="blog__sub-box__content-box--slim blog__sub-box__content-box--border2">
+                                <img src="images/blog-3.png" alt="" class="blog__sub-box__content-box__img">
+                                <div class="blog__sub-box__content-box__text-box">
+                                    <ul class="blog__sub-box__content-box__list">
+                                        <li class="blog__content-box__list__item--title">
+                                            <h4>Post With Image</h4>
+                                        </li>
+                                        <li class="blog__content-box__list__item--date">DEC 24, 2013</li>
+                                        <li>
+                                            <p class="blog__content-box__list__item__para--light">At vero eos et accusam justo duo dolores etea ruburn quis auste iure..</p>
+                                        </li>
+                                    </ul>
+                                    <ul class="blog__sub-box__content-box__social">
+                                        <li class="blog__content-box__social__icon">
+                                            <img src="images/social-icon-facebook.png" alt="facebook icon">
+                                        </li>
+                                        <li class="blog__content-box__social__icon">
+                                            <img src="images/social-icon-twitter.png" alt="twitter icon">
+                                        </li>
+                                        <li class="blog__content-box__social__icon">
+                                            <img src="images/social-icon-g.png" alt="g icon">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <button class="blog__btn--small">view all</button>

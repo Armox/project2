@@ -28,23 +28,20 @@ $text-light: #989898;
 }
 
 //===== GRID MIXINS ===== 
-@mixin grid-col ($num) {
+@mixin grid-col ($min, $col-gap, $row-gap) {
 display: grid;
-grid-template-columns: repeat($num, 1fr);
-    // @if $num == 2 {
-    //     grid-template-columns: repeat(2, 50%);
-    // } @else if $num == 3 {
-    //     grid-template-columns: repeat(3, 33.3%);
-    // } @else if $num == 4 {
-    //     grid-template-columns: repeat(4, 25%);
-    // }
+grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+grid-column-gap: $col-gap;
+grid-row-gap: $row-gap;
+grid-auto-flow: row;
+    
 }
 
 // ===== WRAPPER =====
 %wrapper {
     display: grid;
-    grid-template-columns: 1fr minmax(300px, 1200px) 1fr;
-    // grid-template-columns: 1fr 10fr 1fr;
+    // grid-template-columns: minmax(10px, 100px) minmax(280px, 1200px) minmax(10px, 100px);
+    grid-template-columns: 1fr 10fr 1fr;
 }
 // ===== FONT _______ =====
 %h1-light {
@@ -64,33 +61,44 @@ grid-template-columns: repeat($num, 1fr);
     width: 200px;
     height: 55px;
     text-transform: uppercase;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 700;
     line-height: 2.5;
     background: none;
     border: 3px solid $light-white;
+    &:hover {
+        transform: scale(1.1);
+        border-color: $dark-red;
+    }
     &--small {
     padding: 0;
     width: 170px;
     height: 55px;
     text-transform: uppercase;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 700;
     line-height: 2.5;
     background: none;
     border: 3px solid $light-white;
+    &:hover {
+        transform: scale(1.1);
+        border-color: $dark-red;
+    }
     }
     &--small-red {
     padding: 0;
     height: 55px;
     width: 70px;
     text-transform: uppercase;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 700;
     line-height: 2.5;
     background: none;
     border: 3px solid $light-red;
     color: $light-red;
+    &:hover {
+        transform: scale(1.1);
+    }
     }
 }
 
